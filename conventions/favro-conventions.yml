@@ -1,0 +1,59 @@
+generated: '2026-07-19'
+method: searched
+source: https://favro.com/developer
+authentication:
+  style: http-basic
+  credential: email + revocable API token
+  ref: authentication/favro-authentication.yml
+organization_scope:
+  header: organizationId
+  required_for: organization-level routes (collections, widgets, cards, etc.)
+pagination:
+  style: request-id cursor
+  description: >-
+    List responses return a page of up to 100 entities plus paging metadata.
+    To fetch subsequent pages, repeat the request with the returned requestId
+    and an incremented page number, and echo the X-Favro-Backend-Identifier
+    header so the request is routed to the same backend instance.
+  request_params: [requestId, page]
+  response_fields: [entities, requestId, page, pages, limit]
+  default_page_size: 100
+routing:
+  header: X-Favro-Backend-Identifier
+  description: >-
+    Every response includes X-Favro-Backend-Identifier; include it on follow-up
+    requests (especially paginated ones) to maintain backend affinity.
+rate_limiting:
+  style: token-bucket
+  ref: (no separate rate-limits artifact; documented inline)
+  auto_delay_seconds: 10
+  over_limit_status: 429
+  response_headers:
+  - X-RateLimit-Limit
+  - X-RateLimit-Remaining
+  - X-RateLimit-Reset
+  - X-RateLimit-Delay
+  tiers:
+    user_level_per_hour: 50
+    org_trial_per_hour: 100
+    org_lite_per_hour: 0
+    org_standard_per_hour: 1000
+    org_enterprise_per_hour: 10000
+versioning:
+  scheme: uri-path
+  current: v1
+  base: https://favro.com/api/v1
+idempotency:
+  supported: false
+  note: >-
+    Favro does not document an idempotency-key header or contract; retries of
+    non-GET requests are not guaranteed to be idempotent.
+error_envelope:
+  style: http-status
+  ref: errors/favro-problem-types.yml
+  content_type: application/json
+webhooks:
+  ref: asyncapi/favro-webhooks.yml
+content_type:
+  request: application/json
+  note: Content-Type application/json required for POST/PUT requests.

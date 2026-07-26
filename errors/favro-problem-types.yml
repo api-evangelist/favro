@@ -1,0 +1,43 @@
+generated: '2026-07-19'
+method: searched
+source: https://favro.com/developer
+format: http-status
+note: >-
+  Favro returns standard HTTP status codes with a JSON body; it does not use
+  RFC 9457 application/problem+json. Codes below are documented on the Favro
+  developer reference.
+success_codes:
+- status: 200
+  title: OK
+- status: 201
+  title: Created
+- status: 202
+  title: Accepted
+- status: 204
+  title: No Content
+problems:
+- status: 400
+  title: Bad Request
+  meaning: The request was malformed or contained invalid parameters.
+- status: 401
+  title: Unauthorized
+  meaning: Missing or invalid authentication credentials (email + API token).
+  remediation: Verify the Basic auth email and API token; regenerate the token if revoked.
+- status: 402
+  title: Request Failed
+  meaning: The request was valid but could not be completed (e.g. plan limitation).
+- status: 403
+  title: Access Denied
+  meaning: The authenticated user lacks permission for the resource or organization.
+- status: 404
+  title: Not Found
+  meaning: The requested resource does not exist or is not visible to the user.
+- status: 429
+  title: Too Many Requests
+  meaning: Rate limit exceeded for the user- or organization-level route.
+  remediation: >-
+    Back off and retry after the window in X-RateLimit-Reset; respect
+    X-RateLimit-Remaining and X-RateLimit-Delay.
+- status: 500
+  title: Internal Error
+  meaning: An unexpected server-side error occurred.

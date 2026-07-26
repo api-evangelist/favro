@@ -1,0 +1,35 @@
+generated: '2026-07-19'
+method: searched
+source: https://favro.com/developer ; https://www.favro.com/security
+standards:
+- id: scim-1.1
+  conforms: true
+  evidence: Favro documents SCIM v1.1 user/group provisioning endpoints.
+- id: scim-2.0
+  conforms: true
+  evidence: Favro documents SCIM v2.0 user/group provisioning endpoints.
+- id: oauth2
+  conforms: false
+  evidence: API uses HTTP Basic auth with email + API token; no OAuth2 flows documented.
+- id: openid-connect
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors use plain HTTP status codes with a JSON body, not application/problem+json.
+- id: rfc8594-sunset-header
+  conforms: false
+- id: cursor-pagination
+  conforms: true
+  evidence: request-id cursor pagination with requestId + page across responses.
+- id: rate-limit-headers
+  conforms: true
+  evidence: X-RateLimit-Limit / -Remaining / -Reset / -Delay headers on responses.
+- id: iso-27001
+  conforms: true
+  evidence: ISO/IEC 27001 certification stated on https://www.favro.com/security.
+- id: iso-27701
+  conforms: true
+  evidence: ISO/IEC 27701 privacy certification stated on https://www.favro.com/security.
+- id: pci-dss
+  conforms: true
+  evidence: PCI DSS (SAQ A 4.0.1) compliance stated on https://www.favro.com/security.

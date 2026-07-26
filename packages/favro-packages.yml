@@ -1,0 +1,39 @@
+generated: '2026-07-19'
+method: searched
+source: https://registry.npmjs.org/-/v1/search?text=favro ; https://rubygems.org
+note: >-
+  Favro does not publish a first-party client SDK. The libraries below are
+  community-maintained wrappers of the public REST API (https://favro.com/api/v1);
+  none are official. No first-party SDK found on npm, PyPI, RubyGems, Packagist,
+  Maven Central, NuGet, or crates.io as of the search date.
+packages:
+- language: typescript
+  registry: npm
+  name: "@flyacts/favro-api"
+  url: https://www.npmjs.com/package/@flyacts/favro-api
+  install: npm install @flyacts/favro-api
+  official: false
+- language: typescript
+  registry: npm
+  name: "@bscotch/bravo"
+  url: https://www.npmjs.com/package/@bscotch/bravo
+  install: npm install @bscotch/bravo
+  official: false
+- language: javascript
+  registry: npm
+  name: "@pipedream/favro"
+  url: https://www.npmjs.com/package/@pipedream/favro
+  install: npm install @pipedream/favro
+  official: false
+- language: ruby
+  registry: rubygems
+  name: favro_api
+  url: https://rubygems.org/gems/favro_api
+  install: gem install favro_api
+  official: false
+- language: ruby
+  registry: rubygems
+  name: danger-favro
+  url: https://rubygems.org/gems/danger-favro
+  install: gem install danger-favro
+  official: false

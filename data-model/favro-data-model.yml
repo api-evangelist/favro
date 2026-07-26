@@ -1,0 +1,84 @@
+generated: '2026-07-19'
+method: derived
+source: https://favro.com/developer
+note: >-
+  Entity-relationship graph derived from the documented Favro object model and
+  REST resource nesting (no OpenAPI published). Relationships reflect documented
+  id-reference fields and endpoint hierarchy.
+entities:
+- name: organization
+  description: Top-level tenant; all planning data is scoped to an organization.
+  relationships:
+  - has_many: collection
+  - has_many: user
+  - has_many: group
+  - has_many: webhook
+- name: user
+  description: A member of one or more organizations.
+- name: group
+  description: A named set of users within an organization.
+  relationships:
+  - has_many: user
+- name: collection
+  description: A container that groups widgets (boards).
+  relationships:
+  - belongs_to: organization
+  - has_many: widget
+- name: widget
+  description: A board/backlog surface (identified by widgetCommonId).
+  relationships:
+  - belongs_to: collection
+  - has_many: column
+  - has_many: card
+- name: column
+  description: A column (status lane) on a widget.
+  relationships:
+  - belongs_to: widget
+- name: card
+  description: The core work item; lives on a widget/column.
+  relationships:
+  - belongs_to: widget
+  - belongs_to: column
+  - has_many: task
+  - has_many: comment
+  - has_many: attachment
+  - has_many: tag
+  - has_many: dependency
+  - has_many: activity
+- name: dependency
+  description: A dependency link between two cards.
+  relationships:
+  - belongs_to: card
+  - references: card
+- name: tasklist
+  description: A list of tasks on a card.
+  relationships:
+  - belongs_to: card
+  - has_many: task
+- name: task
+  description: A checklist item, optionally within a tasklist.
+  relationships:
+  - belongs_to: card
+  - belongs_to: tasklist
+- name: comment
+  description: A comment on a card.
+  relationships:
+  - belongs_to: card
+  - has_many: attachment
+- name: attachment
+  description: A file attached to a card or comment.
+  relationships:
+  - belongs_to: card
+  - belongs_to: comment
+- name: tag
+  description: A label applied to cards.
+  relationships:
+  - belongs_to: organization
+- name: custom_field
+  description: A custom field definition applied to cards.
+  relationships:
+  - belongs_to: organization
+- name: webhook
+  description: An outbound webhook subscription for card/comment events.
+  relationships:
+  - belongs_to: organization

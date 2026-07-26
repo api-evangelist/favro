@@ -1,0 +1,59 @@
+generated: '2026-07-19'
+method: derived
+status: candidate
+source: https://favro.com/developer
+note: >-
+  No official Favro-hosted or remote MCP server was found. The tools below are a
+  candidate surface derived from documented REST operations; they are a starting
+  point, not a provider claim.
+server:
+  name: favro
+  transport: http
+  base_url: https://favro.com/api/v1
+  auth: http-basic (email + API token); organizationId header for org-scoped tools
+tools:
+- name: list_organizations
+  description: List organizations the authenticated user belongs to.
+  source_operation: GET /organizations
+- name: get_user
+  description: Get a user by id.
+  source_operation: GET /users/:userId
+- name: list_collections
+  description: List collections in an organization.
+  source_operation: GET /collections
+- name: list_widgets
+  description: List widgets (boards/backlogs) in a collection.
+  source_operation: GET /widgets
+- name: list_columns
+  description: List columns on a widget.
+  source_operation: GET /columns
+- name: list_cards
+  description: List cards, optionally filtered by widget or collection.
+  source_operation: GET /cards
+- name: create_card
+  description: Create a card.
+  source_operation: POST /cards
+- name: update_card
+  description: Update a card.
+  source_operation: PUT /cards/:cardId
+- name: list_tasks
+  description: List tasks.
+  source_operation: GET /tasks
+- name: list_comments
+  description: List comments.
+  source_operation: GET /comments
+- name: create_comment
+  description: Create a comment.
+  source_operation: POST /comments
+- name: list_tags
+  description: List tags.
+  source_operation: GET /tags
+- name: list_custom_fields
+  description: List custom fields.
+  source_operation: GET /customfields
+- name: list_webhooks
+  description: List configured webhooks.
+  source_operation: GET /webhooks
+- name: create_webhook
+  description: Create a webhook subscription.
+  source_operation: POST /webhooks

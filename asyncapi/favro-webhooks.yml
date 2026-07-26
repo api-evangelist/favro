@@ -1,0 +1,37 @@
+generated: '2026-07-19'
+method: searched
+source: https://favro.com/developer
+spec_type: Webhooks
+transport: http-post
+description: >-
+  Favro delivers outbound webhooks for card and comment lifecycle events. Webhooks
+  are managed through the /webhooks API (GET /webhooks, POST /webhooks,
+  DELETE /webhooks/:webhookId) and via the Favro UI. Payloads are delivered as
+  HTTP POST with a signature for verification; a ping event is used to validate a
+  new endpoint.
+management_api:
+  list: GET /webhooks
+  create: POST /webhooks
+  delete: DELETE /webhooks/:webhookId
+verification:
+  method: signature
+  note: Webhook requests carry a signature so receivers can verify authenticity.
+events:
+- name: ping
+  description: Validation event sent when a webhook is created or tested.
+- name: card.created
+  description: A card was created.
+- name: card.committed
+  description: A card was committed.
+- name: card.moved
+  description: A card was moved between columns or widgets.
+- name: card.updated
+  description: A card was updated.
+- name: card.deleted
+  description: A card was deleted.
+- name: comment.created
+  description: A comment was created.
+- name: comment.updated
+  description: A comment was updated.
+- name: comment.deleted
+  description: A comment was deleted.
