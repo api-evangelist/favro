@@ -2,10 +2,8 @@ generated: '2026-07-19'
 method: derived
 status: candidate
 source: https://favro.com/developer
-note: >-
-  No official Favro-hosted or remote MCP server was found. The tools below are a
-  candidate surface derived from documented REST operations; they are a starting
-  point, not a provider claim.
+note: No official Favro-hosted or remote MCP server was found. The tools below are a candidate surface
+  derived from documented REST operations; they are a starting point, not a provider claim.
 server:
   name: favro
   transport: http
@@ -57,3 +55,9 @@ tools:
 - name: create_webhook
   description: Create a webhook subscription.
   source_operation: POST /webhooks
+deployment:
+  mode: none
+  verified: derived
+  tools: 15
+  checked: '2026-08-12'
+  source: catalog MCP census
