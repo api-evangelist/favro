@@ -34,6 +34,16 @@ modified: '2026-07-19'
 image: https://cdn.prod.website-files.com/5eb8d3f3c300199312debf24/6036cf2c15bbbca169cec61a_meta2.png
 tags:
 - Company
+- Software-as-a-Service
+- Project Management
+- Collaboration
+- Agile
+- Planning
+- Task Management
+- Kanban
+- Productivity
+tags_raw:
+- Company
 - Saas
 - Project Management
 - Collaboration
@@ -57,6 +67,11 @@ apis:
   humanURL: https://favro.com/developer
   baseURL: https://favro.com/api/v1
   tags:
+  - Project Management
+  - Collaboration
+  - Cards
+  - Webhook
+  tags_raw:
   - Project Management
   - Collaboration
   - Cards
