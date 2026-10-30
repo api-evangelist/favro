@@ -64,6 +64,109 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Favro is a company surfaced as a portfolio company of creandum and added to the API Evangelist network as a stub for enrichment. Sector: saas. This profile is a lead awaiting the enrichment pipeline.
+Favro is a cloud planning and collaboration platform for agile teams, combining planning boards, backlogs, sprint/kanban widgets, roadmaps, and OKR/portfolio management in a single organization-scoped workspace. Its public REST API (https://favro.com/api/v1) exposes organizations, collections, widgets, columns, cards, tasks, tasklists, comments, tags, custom fields, groups, users, and webhooks, authenticated with HTTP Basic auth using an email plus a revocable API token. The API supports request-id cursor pagination, per-plan token-bucket rate limiting with X-RateLimit-* headers, backend-affinity routing via the X-Favro-Backend-Identifier header, outbound webhooks for card and comment events, and SCIM 1.1/2.0 user and group provisioning. Favro is SaaS, backed by Creandum.
 
-Backed by: creandum — https://www.favro.com/
+**Areas:** Company · Software-as-a-Service · Project Management · Collaboration · Agile · Planning · Task Management · Kanban · Productivity
+
+## Favro on APIs.io
+
+Everything profiled for Favro is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/favro/](https://apis.io/providers/favro/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Favro API](https://apis.io/apis/favro/favro-api/) — Public REST API for the Favro planning and collaboration platform: manage organizations, collections, widgets, columns, cards, tasks, tasklists, comments,…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Favro Webhooks](https://apis.io/asyncapis/favro/favro-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [favro](https://apis.io/servers/favro/favro/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Favro Authentication](https://apis.io/security/favro/favro-authentication/)
+- [Favro Domain Security](https://apis.io/security/favro/favro-domain-security/)
+- [Favro Trust Center](https://apis.io/security/favro/favro-trust-center/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.favro.com/)
+- [Documentation](https://favro.com/developer)
+- [Pricing](https://www.favro.com/pricing)
+- [Sign up](https://favro.com/signup)
+- [Support](https://help.favro.com)
+- [Blog](https://www.favro.com/blog)
+- [Security](https://www.favro.com/security)
+- [Compliance](https://www.favro.com/security)
+- [Terms of service](https://help.favro.com/en/articles/1024895-favro-s-terms-of-service)
+- [Privacy policy](https://help.favro.com/en/articles/1019861-favro-s-privacy-policy)
+- [Status](https://status.favro.com)
+
+## API Evangelist rating
+
+**Kin Score 47.0** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 39.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 34.2 |
+| Developer ergonomics | 45.2 |
+| Access clarity | 60.5 |
+
+**Agent readiness 22.7** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | yes |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 29.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/favro/](https://apis.io/providers/favro/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Favro: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/favro/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
